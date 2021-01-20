@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginComponent } from './login/login.component';
-import { RecoverPasswordComponent } from './recover-password/recover-password.component';
-import { PresentationComponent } from './presentation/presentation.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login';
+import { RecoverPasswordComponent } from './recover-password';
+import { PageNotFoundComponent } from './page-not-found';
 
 @NgModule({
     declarations: [
         LoginComponent,
         RecoverPasswordComponent,
-        PresentationComponent,
         PageNotFoundComponent
     ],
     imports: [

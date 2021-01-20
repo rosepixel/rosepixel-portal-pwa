@@ -1,7 +1,7 @@
-# Rose Pixel Portal PWA
+# Rose Pixel Portal Web
 
 
-Portal PWA based on Angular.
+Portal Web based on Angular.
 
 ## Author
 

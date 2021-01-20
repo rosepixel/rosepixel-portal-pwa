@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from 'src/app/pages/page-not-found/page-not-found.component';
 
-import { PresentationComponent } from 'src/app/pages/presentation/presentation.component';
+import { PageNotFoundComponent } from '@pages/page-not-found';
 
 const routes: Routes = [{
-    path: 'presentation',
-    component: PresentationComponent
+    path: 'site',
+    loadChildren: () => import('./site/site.module').then(m => m.SiteModule)
 }, {
     path: '',
-    redirectTo: '/presentation',
+    redirectTo: '/site',
     pathMatch: 'full'
 }, {
     path: '**',

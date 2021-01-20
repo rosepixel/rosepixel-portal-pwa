@@ -25,7 +25,7 @@ module.exports = function (config) {
             suppressAll: true // removes the duplicated traces
         },
         coverageReporter: {
-            dir: require('path').join(__dirname, './coverage/rosepixel-portal-pwa'),
+            dir: require('path').join(__dirname, './coverage/rosepixel-portal-web'),
             subdir: '.',
             reporters: [{
                     type: 'html'

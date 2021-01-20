@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rosepixel-portal-pwa": {
+    "rosepixel-portal-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rosepixel-portal-pwa",
+            "outputPath": "dist/rosepixel-portal-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rosepixel-portal-pwa:build"
+            "browserTarget": "rosepixel-portal-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rosepixel-portal-pwa:build:production"
+              "browserTarget": "rosepixel-portal-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rosepixel-portal-pwa:build"
+            "browserTarget": "rosepixel-portal-web:build"
           }
         },
         "test": {
@@ -107,18 +107,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rosepixel-portal-pwa:serve"
+            "devServerTarget": "rosepixel-portal-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rosepixel-portal-pwa:serve:production"
+              "devServerTarget": "rosepixel-portal-web:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "rosepixel-portal-pwa",
+  "defaultProject": "rosepixel-portal-web",
   "cli": {
     "analytics": "75271010-4595-4389-a015-1d36f08810e9"
   }
