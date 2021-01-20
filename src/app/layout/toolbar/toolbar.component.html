@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>Rose Pixel</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar>
+<div fxLayout="row" class="toolbar">
+    <div fxFlex="10"></div>
+    <div>
+        <img class="toolbar-image" src="/assets/images/rose_pixel_logo.png" />
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end">
+        <button mat-button>Principal</button>
+        <button mat-button>Preço</button>
+        <button mat-button>Contato</button>
+        <button mat-button>Entrar</button>
+    </div>
+    <div fxFlex="10"></div>
+</div>

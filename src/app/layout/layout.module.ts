@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ToolbarComponent } from '@layout/toolbar';
 import { NavigationComponent } from '@layout/navigation';
@@ -15,6 +16,7 @@ import { NavigationComponent } from '@layout/navigation';
 @NgModule({
     imports: [
         CommonModule,
+        FlexLayoutModule,
 
         MatToolbarModule,
         MatButtonModule,
