@@ -1,17 +1,45 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SiteRoutingModule } from './site-routing.module';
 
 import { LayoutModule } from '@app/layout';
 import { SiteComponent } from './site.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
-    declarations: [SiteComponent],
+    declarations: [
+        SiteComponent,
+        NavigationBarComponent,
+        FooterComponent,
+        ProductsComponent
+    ],
     imports: [
         CommonModule,
+        FlexLayoutModule,
+
         SiteRoutingModule,
-        LayoutModule
+        LayoutModule,
+
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatGridListModule,
+        MatCardModule,
+        MatMenuModule
     ]
 })
 export class SiteModule { }
