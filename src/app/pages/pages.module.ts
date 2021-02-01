@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { LoginComponent } from './login';
 import { RecoverPasswordComponent } from './recover-password';
-import { PageNotFoundComponent } from './page-not-found';
 
 @NgModule({
     declarations: [
         LoginComponent,
-        RecoverPasswordComponent,
-        PageNotFoundComponent
+        RecoverPasswordComponent
     ],
     imports: [
         CommonModule

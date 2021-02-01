@@ -17,13 +17,21 @@ import { SiteComponent } from './site.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
+import { SolutionsComponent } from './solutions/solutions.component';
+import { PricesComponent } from './prices/prices.component';
+import { IntegrationsComponent } from './integrations/integrations.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 @NgModule({
     declarations: [
         SiteComponent,
         NavigationBarComponent,
         FooterComponent,
-        ProductsComponent
+        ProductsComponent,
+        SolutionsComponent,
+        PricesComponent,
+        IntegrationsComponent,
+        PresentationComponent
     ],
     imports: [
         CommonModule,
