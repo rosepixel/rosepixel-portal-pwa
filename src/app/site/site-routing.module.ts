@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ContactComponent } from '@site/contact/contact.component';
+import { AboutUsComponent } from '@site/about-us/about-us.component';
 import { IntegrationsComponent } from '@site/integrations/integrations.component';
 import { PresentationComponent } from '@site/presentation/presentation.component';
 import { PricesComponent } from '@site/prices/prices.component';
 import { ProductsComponent } from '@site/products/products.component';
 import { SolutionsComponent } from '@site/solutions/solutions.component';
+import { LoginComponent } from '@site/login/login.component';
 
 import { SiteComponent } from './site.component';
 
@@ -27,6 +30,15 @@ const routes: Routes = [{
     }, {
         path: 'integrations',
         component: IntegrationsComponent
+    }, {
+        path: 'about-us',
+        component: AboutUsComponent
+    }, {
+        path: 'contact',
+        component: ContactComponent
+    }, {
+        path: 'login',
+        component: LoginComponent
     }, {
         path: '',
         redirectTo: '/site/products',
