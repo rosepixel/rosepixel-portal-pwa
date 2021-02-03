@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SiteRoutingModule } from './site-routing.module';
@@ -24,6 +26,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -46,6 +49,8 @@ import { LoginComponent } from './login/login.component';
         SiteRoutingModule,
         LayoutModule,
 
+        ReactiveFormsModule,
+
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
@@ -53,7 +58,9 @@ import { LoginComponent } from './login/login.component';
         MatListModule,
         MatGridListModule,
         MatCardModule,
-        MatMenuModule
+        MatMenuModule,
+        MatInputModule,
+        MatFormFieldModule
     ]
 })
 export class SiteModule { }
