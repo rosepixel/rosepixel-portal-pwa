@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -26,7 +27,9 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
     declarations: [
@@ -40,7 +43,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         PresentationComponent,
         AboutUsComponent,
         ContactComponent,
-        LoginComponent
+        LoginComponent,
+        ForgetPasswordComponent,
+        RegisterComponent
     ],
     imports: [
         CommonModule,
@@ -51,6 +56,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
         ReactiveFormsModule,
 
+        MatCheckboxModule,
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,

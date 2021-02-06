@@ -9,6 +9,8 @@ import { PricesComponent } from '@site/prices/prices.component';
 import { ProductsComponent } from '@site/products/products.component';
 import { SolutionsComponent } from '@site/solutions/solutions.component';
 import { LoginComponent } from '@site/login/login.component';
+import { ForgetPasswordComponent } from '@site/forget-password/forget-password.component';
+import { RegisterComponent } from '@site/register/register.component';
 
 import { SiteComponent } from './site.component';
 
@@ -39,6 +41,12 @@ const routes: Routes = [{
     }, {
         path: 'login',
         component: LoginComponent
+    }, {
+        path: 'forget-password',
+        component: ForgetPasswordComponent
+    }, {
+        path: 'register',
+        component: RegisterComponent
     }, {
         path: '',
         redirectTo: '/site/products',

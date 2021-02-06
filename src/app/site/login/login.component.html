@@ -4,7 +4,7 @@
 
         </div>
         <div fxFlex="30" class="background-2" fxLayout="column">
-            <form [formGroup]="loginForm" (submit)="submit()">
+            <form method="post" [formGroup]="loginForm" (submit)="submit()" autocomplete="off">
                 <div class="title color-white pt-35 pb-35">
                     ACESSE SUA CONTA
                 </div>
@@ -12,7 +12,7 @@
                     <mat-form-field class="form-field" appearance="outline">
                         <mat-label> E-mail
                         </mat-label>
-                        <input matInput formControlName="email" required>
+                        <input matInput type="email" formControlName="email" required>
                         <mat-error
                             *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors">
                             <span *ngIf="loginForm.controls.email.errors.required">Este campo é obrigatório.</span>
@@ -23,14 +23,24 @@
                     <mat-form-field class="form-field" appearance="outline">
                         <mat-label> Password
                         </mat-label>
-                        <input matInput formControlName="password" type="password">
+                        <input matInput type="password" formControlName="password" required>
                         <mat-error
                             *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors">
                             <span *ngIf="loginForm.controls.password.errors.required">Este campo é obrigatório.</span>
                         </mat-error>
                     </mat-form-field>
 
+                    <mat-checkbox class="pb-20">Continuar conectado</mat-checkbox>
+
+                    <a class="pb-20" routerLink="/site/forget-password">
+                        Esqueceu a senha?
+                    </a>
+
                     <button mat-raised-button color="primary" type="submit">Entrar</button>
+
+                    <a class="pt-20 pb-20 text-center" routerLink="/site/register">
+                        Ainda não possui uma conta?
+                    </a>
                 </div>
             </form>
         </div>
