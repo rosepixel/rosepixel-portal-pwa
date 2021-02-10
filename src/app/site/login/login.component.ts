@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { RecaptchaErrorParameters } from "ng-recaptcha";
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -27,5 +29,13 @@ export class LoginComponent implements OnInit {
             return;
         }
         console.log(this.loginForm.value);
+    }
+
+    public resolved(captchaResponse: string): void {
+        console.log(`Resolved captcha with response: ${captchaResponse}`);
+    }
+
+    public onError(errorDetails: RecaptchaErrorParameters): void {
+        console.log(`reCAPTCHA error encountered; details:`, errorDetails);
     }
 }

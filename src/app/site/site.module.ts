@@ -31,6 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { RegisterComponent } from './register/register.component';
 
+import { RecaptchaModule} from 'ng-recaptcha';
+
 @NgModule({
     declarations: [
         SiteComponent,
@@ -55,6 +57,7 @@ import { RegisterComponent } from './register/register.component';
         LayoutModule,
 
         ReactiveFormsModule,
+        RecaptchaModule,
 
         MatCheckboxModule,
         MatToolbarModule,
