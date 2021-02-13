@@ -1,50 +1,55 @@
-<div fxLayout="column" fxFlexFill>
-    <div fxLayout="row" fxFlexFill>
-        <div fxFlex="70" class="background-1">
+<div fxLayout="row" class="login">
+    <div fxFlex="70" class="login-presentation-background">
 
-        </div>
-        <div fxFlex="30" class="background-2" fxLayout="column">
-            <form method="post" [formGroup]="loginForm" (submit)="submit()" autocomplete="off">
-                <div class="title color-white pt-35 pb-35">
-                    ACESSE SUA CONTA
-                </div>
-                <div fxLayout="column" class="ml-25p mr-25p">
-                    <mat-form-field class="form-field" appearance="outline">
-                        <mat-label> E-mail
-                        </mat-label>
-                        <input matInput type="email" formControlName="email" required>
-                        <mat-error
-                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors">
-                            <span *ngIf="loginForm.controls.email.errors.required">Este campo é obrigatório.</span>
-                            <span *ngIf="loginForm.controls.email.errors.pattern">Este campo é inválido.</span>
-                        </mat-error>
-                    </mat-form-field>
+    </div>
+    <div fxFlex="30" fxLayout="column" class="login-panel-background">
+        <form method="post" [formGroup]="loginForm" (submit)="submit()" autocomplete="off">
+            <div class="title color-white pt-35 pb-35">
+                Bem vindo de volta!
+            </div>
+            <div fxLayout="column" class="ml-25p mr-25p">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> E-mail
+                    </mat-label>
+                    <input matInput type="email" formControlName="email" required>
+                    <button mat-icon-button matSuffix type="button" [attr.aria-label]="'Email'">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </button>
+                    <mat-error
+                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors">
+                        <span *ngIf="loginForm.controls.email.errors.required">Este campo é obrigatório.</span>
+                        <span *ngIf="loginForm.controls.email.errors.pattern">Este campo é inválido.</span>
+                    </mat-error>
+                </mat-form-field>
 
-                    <mat-form-field class="form-field" appearance="outline">
-                        <mat-label> Password
-                        </mat-label>
-                        <input matInput type="password" formControlName="password" required>
-                        <mat-error
-                            *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors">
-                            <span *ngIf="loginForm.controls.password.errors.required">Este campo é obrigatório.</span>
-                        </mat-error>
-                    </mat-form-field>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> Password
+                    </mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <button mat-icon-button matSuffix type="button" (click)="hide = !hide"
+                        [attr.aria-label]="'Ocultar ou revelar a senha'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error
+                        *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors">
+                        <span *ngIf="loginForm.controls.password.errors.required">Este campo é obrigatório.</span>
+                    </mat-error>
+                </mat-form-field>
 
-                    <mat-checkbox class="pb-20">Continuar conectado</mat-checkbox>
+                <mat-checkbox class="pt-10 pb-20 color-white">Continuar conectado</mat-checkbox>
 
-                    <a class="pb-20" routerLink="/site/forget-password">
-                        Esqueceu a senha?
-                    </a>
+                <a class="pb-20" routerLink="/site/forget-password">
+                    Esqueceu a senha?
+                </a>
 
-                    <button mat-raised-button color="primary" type="submit">Entrar</button>
+                <button mat-raised-button color="primary" type="submit">Entrar</button>
 
-                    <a class="pt-20 pb-20 text-center" routerLink="/site/register">
-                        Ainda não possui uma conta?
-                    </a>
-                </div>
-            </form>
-        </div>
+                <a class="pt-20 pb-20 text-center" routerLink="/site/register">
+                    Ainda não possui uma conta?
+                </a>
+            </div>
+        </form>
     </div>
 </div>
 
-<re-captcha (resolved)="resolved($event)"></re-captcha>
+<re-captcha #recaptcha (resolved)="resolved($event)"></re-captcha>
