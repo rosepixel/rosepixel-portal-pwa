@@ -1,7 +1,11 @@
-<div class="register" fxLayout="column" fxLayoutGap="10px">
-    <div class="header pb-35 color-white">CRIE SUA CONTA</div>
+<div class="banner register" fxLayout="column" fxLayoutGap="10px">
+
+    <div class="header pt-45 pb-35">CRIE SUA CONTA</div>
+
     <form method="post" [formGroup]="registerForm" (submit)="submit()" autocomplete="off">
+
         <div class="ml-25p mr-25p" fxLayout="column">
+
             <mat-form-field class="form-field" appearance="outline" color="primary">
                 <mat-label>Nome</mat-label>
                 <input matInput type="text" formControlName="name" required>
@@ -40,6 +44,9 @@
             </mat-form-field>
 
             <button mat-raised-button color="primary" type="submit">Prosseguir</button>
+
         </div>
+
     </form>
+
 </div>

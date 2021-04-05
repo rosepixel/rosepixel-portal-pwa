@@ -1,10 +1,15 @@
 <div class="banner contact" fxLayout="column" fxLayoutGap="10px">
-    <div class="header pt-45 pb-35">Contato</div>
+
+    <div class="header pt-45 pb-35">CONTATO</div>
+
     <div class="content pb-20">
         Fale mais sobre você e do que precisa.
     </div>
+
     <form method="post" [formGroup]="contactForm" (submit)="submit()" autocomplete="off">
+
         <div class="ml-25p mr-25p" fxLayout="column">
+
             <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Nome</mat-label>
                 <input matInput type="text" formControlName="name" required>
@@ -45,5 +50,7 @@
             <button mat-raised-button color="primary" type="submit">Entrar</button>
 
         </div>
+
     </form>
+
 </div>
