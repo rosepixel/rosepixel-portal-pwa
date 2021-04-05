@@ -1,22 +1,22 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { RecaptchaComponent, RecaptchaErrorParameters } from "ng-recaptcha";
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
-    @ViewChild('recaptcha') private recaptcha!: any;
+export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
     hide = true;
     emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
 
     constructor(
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private recaptchaV3Service: ReCaptchaV3Service,
     ) {
         this.loginForm = this.formBuilder.group({
             email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
@@ -33,17 +33,12 @@ export class LoginComponent implements OnInit, OnDestroy {
             return;
         }
         console.log(this.loginForm.value);
+
+        this.recaptchaV3Service.execute('importantAction')
+            .subscribe((token) => this.handleToken(token));
     }
 
-    public resolved(captchaResponse: string): void {
-        console.log(`Resolved captcha with response: ${captchaResponse}`);
-    }
-
-    public onError(errorDetails: RecaptchaErrorParameters): void {
-        console.log(`reCAPTCHA error encountered; details:`, errorDetails);
-    }
-
-    ngOnDestroy() {
-        this.recaptcha.elementRef.nativeElement.remove();
+    public handleToken(token: string): void {
+        console.log(`Resolved captcha with response: ${token}`);
     }
 }

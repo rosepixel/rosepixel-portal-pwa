@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { RECAPTCHA_V3_SITE_KEY, RecaptchaModule } from "ng-recaptcha";
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { SiteModule } from './site';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+
 import { environment } from '@environments/environment';
+
+import { SiteModule } from './site';
 
 @NgModule({
     declarations: [
@@ -19,8 +20,8 @@ import { environment } from '@environments/environment';
         BrowserModule,
         BrowserAnimationsModule,
         FlexLayoutModule,
-        RecaptchaModule,
         AppRoutingModule,
+        RecaptchaV3Module,
         SiteModule
     ],
     providers: [{
