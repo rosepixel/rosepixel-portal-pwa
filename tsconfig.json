@@ -15,13 +15,17 @@
         "importHelpers": true,
         "target": "es2015",
         "module": "es2020",
+        "allowSyntheticDefaultImports": true,
         "lib": [
             "es2018",
-            "dom"
+            "dom",
+            "esnext.asynciterable"
         ],
         "paths": {
             "@app/*": ["src/app/*"],
             "@site/*": ["src/app/site/*"],
+            "@models/*": ["src/app/models/*"],
+            "@services/*": ["src/app/services/*"],
             "@environments/*": ["src/environments/*"],
             "@layout/*": ["src/app/layout/*"],
             "@shared/*": ["src/app/shared/*"],

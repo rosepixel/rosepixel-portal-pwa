@@ -11,6 +11,9 @@ import { SolutionsComponent } from '@site/solutions/solutions.component';
 import { LoginComponent } from '@site/login/login.component';
 import { ForgetPasswordComponent } from '@site/forget-password/forget-password.component';
 import { RegisterComponent } from '@site/register/register.component';
+import { CheckoutComponent } from '@site/checkout/checkout.component';
+import { SubscriptionComponent } from '@site/subscription/subscription.component';
+import { PaymentSuccessfulComponent } from '@site/payment-successful/payment-successful.component';
 
 import { SiteComponent } from './site.component';
 
@@ -48,8 +51,17 @@ const routes: Routes = [{
         path: 'register',
         component: RegisterComponent
     }, {
+        path: 'checkout',
+        component: CheckoutComponent
+    },{
+        path: 'subscription/:plan_id',
+        component: SubscriptionComponent
+    }, {
+        path: 'payment-successful',
+        component: PaymentSuccessfulComponent
+    },  {
         path: '',
-        redirectTo: '/site/products',
+        redirectTo: '/site/presentation',
         pathMatch: 'full'
     }]
 }];
