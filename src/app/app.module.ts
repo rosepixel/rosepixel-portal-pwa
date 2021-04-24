@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,9 @@ import { SiteModule } from './site';
         HttpClientModule
     ],
     providers: [{
+        provide: DEFAULT_CURRENCY_CODE,
+        useValue: 'BRL'
+    }, {
         provide: RECAPTCHA_V3_SITE_KEY,
         useValue: environment.recaptcha.v3.key
     }, {

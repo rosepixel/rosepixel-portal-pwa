@@ -1,59 +1,26 @@
-<div class="banner" fxLayout="column" fxLayoutGap="10px">
-    <div class="header pb-35 pt-160">Preços</div>
+<div class="banner prices" fxLayout="column" fxLayoutGap="10px">
+
+    <div class="header pb-35 pt-160">
+        Preços
+    </div>
+
     <div class="content pb-160">
         Produtos e serviços sob medida para o seu negócio
     </div>
-</div>
 
-<div class="section pb-100 background-1" fxLayout="column">
-    <div class="content pt-100 ml-25p mr-25p" fxLayout="row" fxLayoutGap="20px">
+    <div class="ml-15p mr-15p pb-160" fxLayout="row" fxLayoutGap="20px">
 
-        <div class="card pl-15 pr-15 pb-15" fxFlex="25" fxLayout="column">
-            <div class="header">Plano Grátis</div>
-            <div class="content" fxLayout="column" fxLayoutGap="10px">
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
+        <div class="price-card pl-15 pr-15 pb-15" fxFlex="25" fxLayout="column" *ngFor="let plan of plans">
+            <div class="header">
+                <div>{{plan.name}}</div>
+                <div class="price">{{plan.price | currency}}</div>
             </div>
-            <button mat-raised-button color="primary" [routerLink]="['/site/subscription', 1]">Assinar</button>
-        </div>
-
-        <div class="card pl-15 pr-15 pb-15" fxFlex="25" fxLayout="column">
-            <div class="header">Plano Básico</div>
             <div class="content" fxLayout="column" fxLayoutGap="10px">
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
+                <div class="pb-10" *ngFor="let role of plan.roles">{{role.description}}</div>
             </div>
-            <button mat-raised-button color="primary" [routerLink]="['/site/subscription', 2]">Assinar</button>
-        </div>
-
-        <div class="card pl-15 pr-15 pb-15" fxFlex="25" fxLayout="column">
-            <div class="header">Plano Normal</div>
-            <div class="content" fxLayout="column" fxLayoutGap="10px">
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
-                <div>-</div>
+            <div class="footer">
+                <button mat-raised-button color="primary" class="full" [routerLink]="['/site/subscription', 1]">Assinar</button>
             </div>
-            <button mat-raised-button color="primary" [routerLink]="['/site/subscription', 3]">Assinar</button>
-        </div>
-
-        <div class="card pl-15 pr-15 pb-15" fxFlex="25" fxLayout="column">
-            <div class="header">Plano Empresa</div>
-            <div class="content" fxLayout="column" fxLayoutGap="10px">
-                <div>Acesso às nossas APIs</div>
-                <div>Suporte 24 Horas</div>
-                <div>Consultoria Personalizada</div>
-                <div>-</div>
-                <div>-</div>
-            </div>
-            <button mat-raised-button color="primary" [routerLink]="['/site/subscription', 4]">Assinar</button>
         </div>
 
     </div>
